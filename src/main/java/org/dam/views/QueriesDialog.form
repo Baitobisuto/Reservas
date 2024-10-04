@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="org.dam.views.QueriesDialog">
+  <grid id="27dc6" binding="MainPanel" layout-manager="FormLayout">
+    <rowspec value="center:25px:noGrow"/>
+    <rowspec value="top:50px:noGrow"/>
+    <rowspec value="center:50px:noGrow"/>
+    <rowspec value="top:52px:noGrow"/>
+    <rowspec value="center:50px:noGrow"/>
+    <rowspec value="top:50px:noGrow"/>
+    <rowspec value="center:50px:noGrow"/>
+    <rowspec value="top:52px:noGrow"/>
+    <rowspec value="center:max(d;50px):noGrow"/>
+    <rowspec value="top:50px:noGrow"/>
+    <rowspec value="center:254px:grow"/>
+    <colspec value="fill:14px:noGrow"/>
+    <colspec value="left:40dlu:noGrow"/>
+    <colspec value="fill:11px:noGrow"/>
+    <colspec value="fill:106px:noGrow"/>
+    <colspec value="left:4dlu:noGrow"/>
+    <colspec value="fill:121px:noGrow"/>
+    <colspec value="left:34dlu:noGrow"/>
+    <colspec value="fill:62px:noGrow"/>
+    <colspec value="left:74dlu:noGrow"/>
+    <colspec value="fill:102px:noGrow"/>
+    <colspec value="fill:554px:grow"/>
+    <colspec value="left:5dlu:noGrow"/>
+    <colspec value="fill:max(d;4px):noGrow"/>
+    <constraints>
+      <xy x="20" y="20" width="1413" height="1100"/>
+    </constraints>
+    <properties>
+      <enabled value="true"/>
+      <focusable value="true"/>
+      <font size="14" style="1"/>
+      <maximumSize width="1100" height="1100"/>
+      <minimumSize width="1100" height="1100"/>
+      <preferredSize width="1100" height="500"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <hspacer id="7959">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-horz="false"/>
+        </constraints>
+      </hspacer>
+      <hspacer id="71f03">
+        <constraints>
+          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-horz="false"/>
+        </constraints>
+      </hspacer>
+      <hspacer id="1148b">
+        <constraints>
+          <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-horz="false"/>
+        </constraints>
+      </hspacer>
+      <hspacer id="4f2cc">
+        <constraints>
+          <grid row="0" column="6" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-horz="false"/>
+        </constraints>
+      </hspacer>
+      <hspacer id="1f301">
+        <constraints>
+          <grid row="0" column="7" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-horz="false"/>
+        </constraints>
+      </hspacer>
+      <hspacer id="ce7ad">
+        <constraints>
+          <grid row="0" column="8" row-span="1" col-span="2" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-horz="false"/>
+        </constraints>
+      </hspacer>
+      <hspacer id="acd8b">
+        <constraints>
+          <grid row="0" column="10" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-horz="false"/>
+        </constraints>
+      </hspacer>
+      <vspacer id="35089">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-vert="false"/>
+        </constraints>
+      </vspacer>
+      <vspacer id="fad5b">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-vert="false"/>
+        </constraints>
+      </vspacer>
+      <vspacer id="ed298">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-vert="false"/>
+        </constraints>
+      </vspacer>
+      <vspacer id="d2cda">
+        <constraints>
+          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-vert="false"/>
+        </constraints>
+      </vspacer>
+      <vspacer id="88f1c">
+        <constraints>
+          <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-vert="false"/>
+        </constraints>
+      </vspacer>
+      <vspacer id="d8c46">
+        <constraints>
+          <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-vert="false"/>
+        </constraints>
+      </vspacer>
+      <vspacer id="a62dc">
+        <constraints>
+          <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-vert="false"/>
+        </constraints>
+      </vspacer>
+      <vspacer id="3ea30">
+        <constraints>
+          <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-vert="false"/>
+        </constraints>
+      </vspacer>
+      <vspacer id="a07dc">
+        <constraints>
+          <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-vert="false"/>
+        </constraints>
+      </vspacer>
+      <vspacer id="3f135">
+        <constraints>
+          <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-vert="false"/>
+        </constraints>
+      </vspacer>
+      <scrollpane id="e1297">
+        <constraints>
+          <grid row="2" column="6" row-span="7" col-span="5" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-horz="false" defaultalign-vert="false"/>
+        </constraints>
+        <properties>
+          <maximumSize width="1100" height="500"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="b24cf" class="javax.swing.JTable" binding="tb_reservas">
+            <constraints/>
+            <properties>
+              <preferredScrollableViewportSize width="600" height="300"/>
+              <preferredSize width="600" height="40"/>
+            </properties>
+          </component>
+        </children>
+      </scrollpane>
+      <component id="2c93f" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-horz="false"/>
+        </constraints>
+        <properties>
+          <font size="14" style="1"/>
+          <text value="ID"/>
+        </properties>
+      </component>
+      <component id="bee" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-vert="false"/>
+        </constraints>
+        <properties>
+          <font size="14" style="1"/>
+          <text value="Nombre:"/>
+        </properties>
+      </component>
+      <component id="1d31b" class="javax.swing.JTextField" binding="tx_id">
+        <constraints>
+          <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+          <forms defaultalign-horz="false" defaultalign-vert="false"/>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="83372" class="javax.swing.JTextField" binding="tx_nombre">
+        <constraints>
+          <grid row="3" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+          <forms defaultalign-horz="false" defaultalign-vert="false"/>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="8b0b6" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <forms/>
+        </constraints>
+        <properties>
+          <font size="14" style="1"/>
+          <text value="Desde:"/>
+        </properties>
+      </component>
+      <component id="6f7f6" class="javax.swing.JButton" binding="btn_BuscarID">
+        <constraints>
+          <grid row="2" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-horz="false"/>
+        </constraints>
+        <properties>
+          <text value="BUSCAR"/>
+        </properties>
+      </component>
+      <component id="f48d6" class="javax.swing.JButton" binding="btn_BuscarNombre">
+        <constraints>
+          <grid row="3" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-horz="false" defaultalign-vert="false"/>
+        </constraints>
+        <properties>
+          <text value="BUSCAR"/>
+        </properties>
+      </component>
+      <component id="a1f1c" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-vert="false"/>
+        </constraints>
+        <properties>
+          <font size="14" style="1"/>
+          <text value="Hasta:"/>
+        </properties>
+      </component>
+      <component id="67fb1" class="com.github.lgooddatepicker.components.DatePicker" binding="dp_desde">
+        <constraints>
+          <grid row="4" column="2" row-span="1" col-span="4" vsize-policy="3" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <forms top="0" left="10" bottom="0" right="10" defaultalign-horz="false" defaultalign-vert="false"/>
+        </constraints>
+        <properties>
+          <enabled value="true"/>
+          <minimumSize width="150" height="100"/>
+          <preferredSize width="80" height="25"/>
+          <requestFocusEnabled value="true"/>
+        </properties>
+      </component>
+      <component id="cf430" class="com.github.lgooddatepicker.components.DatePicker" binding="dp_hasta">
+        <constraints>
+          <grid row="5" column="2" row-span="1" col-span="4" vsize-policy="3" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <forms top="0" left="10" bottom="0" right="10" defaultalign-horz="false" defaultalign-vert="false"/>
+        </constraints>
+        <properties>
+          <enabled value="true"/>
+          <minimumSize width="150" height="100"/>
+          <preferredSize width="80" height="25"/>
+          <requestFocusEnabled value="true"/>
+        </properties>
+      </component>
+      <component id="60bd1" class="javax.swing.JButton" binding="btn_cancelar">
+        <constraints>
+          <grid row="6" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-horz="false"/>
+        </constraints>
+        <properties>
+          <font size="12"/>
+          <maximumSize width="110" height="34"/>
+          <minimumSize width="110" height="34"/>
+          <preferredSize width="100" height="40"/>
+          <text value="CANCELAR"/>
+        </properties>
+      </component>
+      <component id="bb48b" class="javax.swing.JButton" binding="btn_BuscarFecha">
+        <constraints>
+          <grid row="6" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-horz="false"/>
+        </constraints>
+        <properties>
+          <font size="12"/>
+          <preferredSize width="100" height="40"/>
+          <text value="BUSCAR"/>
+        </properties>
+      </component>
+      <component id="3dcd5" class="javax.swing.JButton" binding="btn_back">
+        <constraints>
+          <grid row="9" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-vert="false"/>
+        </constraints>
+        <properties>
+          <text value="&lt;&lt;"/>
+        </properties>
+      </component>
+      <component id="c98cc" class="javax.swing.JButton" binding="btn_next">
+        <constraints>
+          <grid row="9" column="7" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-vert="false"/>
+        </constraints>
+        <properties>
+          <text value="&gt;&gt;"/>
+        </properties>
+      </component>
+      <component id="ada6e" class="javax.swing.JLabel" binding="lb_page">
+        <constraints>
+          <grid row="9" column="8" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-vert="false"/>
+        </constraints>
+        <properties>
+          <text value="Página "/>
+        </properties>
+      </component>
+      <component id="9ded5" class="javax.swing.JComboBox" binding="cb_page">
+        <constraints>
+          <grid row="9" column="9" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-vert="false"/>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="afc7f" class="javax.swing.JButton" binding="btn_cargar">
+        <constraints>
+          <grid row="7" column="3" row-span="1" col-span="3" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-horz="false" defaultalign-vert="false"/>
+        </constraints>
+        <properties>
+          <font size="12"/>
+          <preferredSize width="100" height="40"/>
+          <text value="CARGAR"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>

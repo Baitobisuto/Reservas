@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="org.dam.views.FormDialog">
+  <grid id="27dc6" binding="mainPanel" layout-manager="FormLayout">
+    <rowspec value="center:64px:noGrow"/>
+    <rowspec value="center:20dlu:noGrow"/>
+    <rowspec value="top:20dlu:noGrow"/>
+    <rowspec value="center:20dlu:noGrow"/>
+    <rowspec value="top:20dlu:noGrow"/>
+    <rowspec value="center:36px:noGrow"/>
+    <rowspec value="center:40px:noGrow"/>
+    <rowspec value="center:37dlu:noGrow"/>
+    <rowspec value="center:61px:noGrow"/>
+    <rowspec value="top:30dlu:noGrow"/>
+    <rowspec value="center:91px:noGrow"/>
+    <rowspec value="top:50dlu:noGrow"/>
+    <rowspec value="center:max(d;4px):noGrow"/>
+    <colspec value="fill:37px:noGrow"/>
+    <colspec value="left:106dlu:noGrow"/>
+    <colspec value="fill:max(d;4px):noGrow"/>
+    <colspec value="left:36dlu:noGrow"/>
+    <colspec value="left:4dlu:noGrow"/>
+    <colspec value="fill:max(d;4px):noGrow"/>
+    <colspec value="fill:10px:noGrow"/>
+    <colspec value="fill:35px:noGrow"/>
+    <colspec value="fill:45px:noGrow"/>
+    <colspec value="fill:max(d;4px):noGrow"/>
+    <colspec value="left:19dlu:noGrow"/>
+    <colspec value="fill:61px:noGrow"/>
+    <colspec value="fill:112px:noGrow"/>
+    <colspec value="fill:17px:grow"/>
+    <constraints>
+      <xy x="20" y="20" width="700" height="700"/>
+    </constraints>
+    <properties>
+      <background color="-523"/>
+      <font name="Monospaced" size="18" style="1"/>
+      <maximumSize width="700" height="700"/>
+      <minimumSize width="700" height="700"/>
+      <preferredSize width="700" height="700"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <vspacer id="f42ba">
+        <constraints>
+          <grid row="2" column="13" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-vert="false"/>
+        </constraints>
+      </vspacer>
+      <vspacer id="8c7ac">
+        <constraints>
+          <grid row="3" column="13" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-vert="false"/>
+        </constraints>
+      </vspacer>
+      <vspacer id="191f8">
+        <constraints>
+          <grid row="4" column="13" row-span="3" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-vert="false"/>
+        </constraints>
+      </vspacer>
+      <component id="448d2" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-vert="false"/>
+        </constraints>
+        <properties>
+          <font name="Roboto Light" size="16" style="1"/>
+          <foreground color="-13815783"/>
+          <text value="Nombre:"/>
+        </properties>
+      </component>
+      <component id="465e8" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-vert="false"/>
+        </constraints>
+        <properties>
+          <font name="Roboto Light" size="16" style="1"/>
+          <foreground color="-13815783"/>
+          <text value="Teléfono:"/>
+        </properties>
+      </component>
+      <vspacer id="131b3">
+        <constraints>
+          <grid row="7" column="13" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-vert="false"/>
+        </constraints>
+      </vspacer>
+      <vspacer id="56288">
+        <constraints>
+          <grid row="8" column="13" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-vert="false"/>
+        </constraints>
+      </vspacer>
+      <component id="ade61" class="javax.swing.JLabel" binding="tx_DatosClie">
+        <constraints>
+          <grid row="0" column="1" row-span="1" col-span="13" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-horz="false"/>
+        </constraints>
+        <properties>
+          <font name="Britannic Bold" size="28" style="1"/>
+          <foreground color="-13815783"/>
+          <text value="DATOS DEL CLIENTE"/>
+        </properties>
+      </component>
+      <component id="3e765" class="javax.swing.JTextField" binding="tx_name">
+        <constraints>
+          <grid row="1" column="3" row-span="1" col-span="6" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+          <forms defaultalign-horz="false"/>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="4c2b5" class="javax.swing.JTextField" binding="tx_telefono">
+        <constraints>
+          <grid row="2" column="3" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+          <forms defaultalign-horz="false" defaultalign-vert="false"/>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="9e69b" class="javax.swing.JTextArea" binding="ta_Notas">
+        <constraints>
+          <grid row="10" column="1" row-span="1" col-span="12" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="50"/>
+          </grid>
+          <forms defaultalign-horz="false" defaultalign-vert="false"/>
+        </constraints>
+        <properties>
+          <background color="-8355712"/>
+          <foreground color="-16777216"/>
+          <text value=""/>
+        </properties>
+      </component>
+      <component id="72767" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-vert="false"/>
+        </constraints>
+        <properties>
+          <font name="Roboto Light" size="16" style="1"/>
+          <foreground color="-13815783"/>
+          <text value="Fecha reserva:"/>
+        </properties>
+      </component>
+      <component id="dbc73" class="com.github.lgooddatepicker.components.DatePicker" binding="dp_fecha">
+        <constraints>
+          <grid row="3" column="3" row-span="1" col-span="6" vsize-policy="3" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-horz="false"/>
+        </constraints>
+        <properties>
+          <minimumSize width="220" height="34"/>
+          <preferredSize width="220" height="25"/>
+        </properties>
+      </component>
+      <component id="3582d" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-vert="false"/>
+        </constraints>
+        <properties>
+          <font name="Roboto Light" size="16" style="1"/>
+          <foreground color="-13815783"/>
+          <text value="Num.Personas"/>
+        </properties>
+      </component>
+      <component id="b3512" class="javax.swing.JComboBox" binding="cb_numPersonas">
+        <constraints>
+          <grid row="4" column="3" row-span="1" col-span="3" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-vert="false"/>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="38f0d" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-vert="false"/>
+        </constraints>
+        <properties>
+          <font name="Roboto Light" size="16" style="1"/>
+          <foreground color="-13815783"/>
+          <text value="Email:"/>
+        </properties>
+      </component>
+      <component id="a18fe" class="javax.swing.JTextField" binding="tx_email">
+        <constraints>
+          <grid row="5" column="3" row-span="1" col-span="9" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+          <forms defaultalign-horz="false"/>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="3c101" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-vert="false"/>
+        </constraints>
+        <properties>
+          <font name="Roboto Light" size="16" style="1"/>
+          <foreground color="-13815783"/>
+          <text value="Tiene alguna alergia"/>
+        </properties>
+      </component>
+      <component id="d617" class="javax.swing.JCheckBox" binding="ck_si">
+        <constraints>
+          <grid row="6" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <forms/>
+        </constraints>
+        <properties>
+          <foreground color="-16777216"/>
+          <text value="[Si]"/>
+        </properties>
+      </component>
+      <component id="99292" class="javax.swing.JCheckBox" binding="ck_no">
+        <constraints>
+          <grid row="6" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <forms/>
+        </constraints>
+        <properties>
+          <foreground color="-16777216"/>
+          <text value="[No]"/>
+        </properties>
+      </component>
+      <component id="41557" class="javax.swing.JLabel" binding="tx_notas">
+        <constraints>
+          <grid row="9" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-vert="false"/>
+        </constraints>
+        <properties>
+          <font name="Roboto Light" size="16" style="1"/>
+          <foreground color="-13815783"/>
+          <text value="Notas adicionales:"/>
+        </properties>
+      </component>
+      <component id="e60a9" class="com.github.lgooddatepicker.components.TimePicker" binding="dt_hora">
+        <constraints>
+          <grid row="3" column="12" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <forms/>
+        </constraints>
+        <properties/>
+      </component>
+      <vspacer id="df47d">
+        <constraints>
+          <grid row="1" column="13" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-vert="false"/>
+        </constraints>
+      </vspacer>
+      <component id="45c6b" class="javax.swing.JButton" binding="btn_hacerReservar">
+        <constraints>
+          <grid row="12" column="3" row-span="1" col-span="9" vsize-policy="0" hsize-policy="3" anchor="10" fill="0" indent="0" use-parent-layout="false"/>
+          <forms top="0" left="0" bottom="0" right="350" defaultalign-horz="false" defaultalign-vert="false"/>
+        </constraints>
+        <properties>
+          <font name="Roboto Light" size="36" style="1"/>
+          <text value="RESERVAR"/>
+        </properties>
+      </component>
+      <component id="9d17f" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="3" column="11" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-vert="false"/>
+        </constraints>
+        <properties>
+          <font name="Roboto Light" size="16" style="1"/>
+          <foreground color="-13815783"/>
+          <text value="Hora:"/>
+        </properties>
+      </component>
+      <component id="6f51c" class="javax.swing.JLabel" binding="lb_warning">
+        <constraints>
+          <grid row="11" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-horz="false" defaultalign-vert="false"/>
+        </constraints>
+        <properties>
+          <font size="16" style="1"/>
+          <foreground color="-1767658"/>
+          <text value="Alerta"/>
+        </properties>
+      </component>
+      <component id="a5e60" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="7" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <forms/>
+        </constraints>
+        <properties>
+          <font name="Roboto Light" size="16" style="1"/>
+          <foreground color="-16777216"/>
+          <text value="Tipo Menu:"/>
+        </properties>
+      </component>
+      <component id="ecaf" class="javax.swing.JComboBox" binding="cb_tipoMenu">
+        <constraints>
+          <grid row="7" column="3" row-span="1" col-span="3" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+          <forms/>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="6e533" class="javax.swing.JComboBox" binding="cb_TipoAlergia">
+        <constraints>
+          <grid row="7" column="12" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+          <forms/>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="24b43" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="7" column="7" row-span="1" col-span="5" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <forms/>
+        </constraints>
+        <properties>
+          <font name="Roboto Light" size="16" style="1"/>
+          <foreground color="-16777216"/>
+          <text value="Tipo Alergia:"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>

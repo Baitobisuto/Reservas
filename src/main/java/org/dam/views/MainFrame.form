@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="org.dam.views.MainFrame">
+  <grid id="27dc6" binding="MainPanel" layout-manager="FormLayout">
+    <rowspec value="center:max(d;4px):noGrow"/>
+    <rowspec value="top:51dlu:noGrow"/>
+    <rowspec value="center:79px:noGrow"/>
+    <rowspec value="center:max(d;4px):noGrow"/>
+    <rowspec value="top:15dlu:noGrow"/>
+    <rowspec value="top:79px:noGrow"/>
+    <colspec value="fill:max(d;4px):noGrow"/>
+    <colspec value="left:14dlu:noGrow"/>
+    <colspec value="fill:max(d;4px):noGrow"/>
+    <colspec value="fill:258px:noGrow"/>
+    <colspec value="fill:max(d;4px):noGrow"/>
+    <colspec value="left:10dlu:noGrow"/>
+    <colspec value="fill:244px:noGrow"/>
+    <colspec value="fill:34px:noGrow"/>
+    <constraints>
+      <xy x="20" y="5" width="700" height="700"/>
+    </constraints>
+    <properties>
+      <background color="-266"/>
+      <maximumSize width="600" height="400"/>
+      <minimumSize width="600" height="400"/>
+      <preferredSize width="600" height="400"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <component id="576e1" class="javax.swing.JLabel" binding="tx_restaurante">
+        <constraints>
+          <grid row="1" column="1" row-span="1" col-span="7" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-horz="false" defaultalign-vert="false"/>
+        </constraints>
+        <properties>
+          <font name="Britannic Bold" size="36" style="1"/>
+          <foreground color="-16777216"/>
+          <text value="RESTAURANTE ERCILLA"/>
+        </properties>
+      </component>
+      <component id="f127e" class="javax.swing.JButton" binding="btn_reservar">
+        <constraints>
+          <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <forms/>
+        </constraints>
+        <properties>
+          <alignmentX value="0.5"/>
+          <font name="Comic Sans MS" size="16" style="1"/>
+          <horizontalAlignment value="0"/>
+          <margin top="0" left="0" bottom="0" right="0"/>
+          <maximumSize width="500" height="500"/>
+          <minimumSize width="500" height="500"/>
+          <preferredSize width="150" height="150"/>
+          <text value="RESERVAR"/>
+        </properties>
+      </component>
+      <component id="5fc08" class="javax.swing.JButton" binding="btn_borrar">
+        <constraints>
+          <grid row="2" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <forms/>
+        </constraints>
+        <properties>
+          <font name="Comic Sans MS" size="16" style="1"/>
+          <maximumSize width="100" height="100"/>
+          <minimumSize width="500" height="500"/>
+          <preferredSize width="150" height="150"/>
+          <text value="BORRAR"/>
+        </properties>
+      </component>
+      <component id="af2cf" class="javax.swing.JButton" binding="btn_consultas">
+        <constraints>
+          <grid row="5" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-vert="false"/>
+        </constraints>
+        <properties>
+          <font name="Comic Sans MS" size="16" style="1"/>
+          <margin top="0" left="0" bottom="0" right="0"/>
+          <maximumSize width="100" height="100"/>
+          <minimumSize width="500" height="500"/>
+          <preferredSize width="150" height="150"/>
+          <text value="CONSULTAR"/>
+        </properties>
+      </component>
+      <component id="e39ac" class="javax.swing.JButton" binding="btn_exit">
+        <constraints>
+          <grid row="5" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-vert="false"/>
+        </constraints>
+        <properties>
+          <font name="Comic Sans MS" size="16" style="1"/>
+          <margin top="0" left="0" bottom="0" right="0"/>
+          <maximumSize width="100" height="100"/>
+          <minimumSize width="500" height="500"/>
+          <preferredSize width="150" height="150"/>
+          <text value="SALIR"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>
