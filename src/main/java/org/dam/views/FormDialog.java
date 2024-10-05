@@ -112,6 +112,7 @@ public class FormDialog extends JDialog implements InterfaceViews{
     @Override
     public void initComponents() {
         setNumberPerson();
+        setWarningMessage("");
 
     }
 
