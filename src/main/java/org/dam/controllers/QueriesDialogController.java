@@ -10,7 +10,7 @@ import java.awt.event.*;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class QueriesDialogController implements ActionListener, WindowListener, ItemListener, MouseListener { //implemento WindowListener para que la tabla se acutalice cuando reservo
+public class QueriesDialogController implements ActionListener, WindowListener, ItemListener, MouseListener {
 
     private WindowsServices windowsServices;
     private QueriesDialog queriesDialog;
@@ -29,12 +29,12 @@ public class QueriesDialogController implements ActionListener, WindowListener, 
     public static final String BACK_PAGE = "BackPage";
 
 
+
     public QueriesDialogController(WindowsServices windowsServices, ReservasDAO reservasDAO, FormDialog formDialog) {
         this.windowsServices = windowsServices;
         this.queriesDialog = (QueriesDialog) windowsServices.getWindows("QueriesDialog");
         this.reservasDAO = reservasDAO;
         this.formDialog = formDialog;
-        queriesDialog.tb_reservas.addMouseListener(this);
 
     }
 
@@ -198,7 +198,7 @@ public class QueriesDialogController implements ActionListener, WindowListener, 
     public void itemStateChanged(ItemEvent e) { // se lanza cuando cambio de elemento en el combo de las paginas
         if (e.getStateChange() == ItemEvent.SELECTED) {
             handleGetTotalElements();
-            handleUpdatePage(0); // el 0 es para que inicie en 0
+            handleUpdatePage(1); // el 1 es para que inicie en 1
             handleGetRerservas();
         }
     }

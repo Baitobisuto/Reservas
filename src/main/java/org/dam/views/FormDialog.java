@@ -14,7 +14,7 @@ import static org.dam.controllers.FormDialogController.*;
 import static org.dam.controllers.QueriesDialogController.*;
 
 
-public class FormDialog extends JDialog implements InterfaceViews{
+public class FormDialog extends JDialog implements InterfaceViews {
     private JPanel mainPanel;
     private JTextField tx_name;
     private JComboBox cb_numPersonas;
@@ -76,8 +76,8 @@ public class FormDialog extends JDialog implements InterfaceViews{
     @Override
     public void initWindow() {
         setContentPane(mainPanel);
-        setCommands();
         pack();
+        setCommands();
         setLocationRelativeTo(null);
     }
 
@@ -98,13 +98,12 @@ public class FormDialog extends JDialog implements InterfaceViews{
         cb_numPersonas.addActionListener(listener);
         btn_hacerReservar.addActionListener(listener);
         cb_tipoMenu.addActionListener(listener);
-
+        cb_TipoAlergia.addActionListener(listener);
     }
-
 
     @Override
     public void setCommands() {
-        cb_numPersonas.setActionCommand(NUMBER_PERSONS);
+        /*    cb_numPersonas.setActionCommand(NUMBER_PERSONS);*/ //SE HACE SETCOMMANDS DE TODOS LOS COMBOS??
         btn_hacerReservar.setActionCommand(CREATE_RESERVA);
         cb_tipoMenu.setActionCommand(SHOW_TIPO_MENU);
     }
@@ -135,11 +134,11 @@ public class FormDialog extends JDialog implements InterfaceViews{
 
     }*/
 
-    private void setSelectedTipoAlergia(int id){
+    private void setSelectedTipoAlergia(int id) {
         ComboBoxModel<TipoAlergiaModel> model = cb_TipoAlergia.getModel();
         for (int i = 0; i < cb_TipoAlergia.getItemCount(); i++) {
             TipoAlergiaModel alergiaModel = model.getElementAt(i);
-            if(alergiaModel.getId_alergia()== id){
+            if (alergiaModel.getId_alergia() == id) {
                 cb_TipoAlergia.setSelectedItem(alergiaModel);
                 break;
             }
@@ -154,7 +153,11 @@ public class FormDialog extends JDialog implements InterfaceViews{
         ta_Notas.setText(reservas.getNotas_adicionales());
         tx_email.setText(reservas.getEmail_cliente());
         dt_hora.setText(reservas.getHora().toString());
-        setSelectedTipoAlergia(reservas.getId_alergia()); // Y descripcionAlergia???
+        TipoAlergiaModel alergiaModel = new TipoAlergiaModel(); /*ESTÁ BIEN???*/
+        alergiaModel.setDescripcion(reservas.getDescripcion_alergia());
+        TipoMenuModel menuModel = new TipoMenuModel();
+        menuModel.setNombre(reservas.getTipo_menu());
+        setSelectedTipoAlergia(alergiaModel.getId_alergia()); // Y descripcionAlergia???
         cb_tipoMenu.setSelectedItem(reservas.getTipo_menu());
     }
 
@@ -166,9 +169,15 @@ public class FormDialog extends JDialog implements InterfaceViews{
         reservas.setNotas_adicionales(ta_Notas.getText());
         reservas.setEmail_cliente(tx_email.getText());
         reservas.setHora(dt_hora.getTime());
+        reservas.setDescripcion_alergia((String) cb_TipoAlergia.getSelectedItem());
+        reservas.setTipo_menu((String) cb_tipoMenu.getSelectedItem());
+        /*TipoMenuModel model = new TipoMenuModel(); //MIRAR COMO DEVOLVER LAS LAS ALERGIAS Y MENUS
+        model.setId_menu((Integer) cb_tipoMenu.getSelectedItem());
+        TipoAlergiaModel AlergiaModel = (TipoAlergiaModel) cb_TipoAlergia.getSelectedItem();
+        AlergiaModel.setDescripcion(AlergiaModel.getDescripcion());*/
         String numpersonas = (String) cb_numPersonas.getSelectedItem();
         reservas.setNum_personas(Integer.valueOf(numpersonas));
-        if(isEditMode){
+        if (isEditMode) {
             reservas.setId(reservaID);
         }
         return reservas;
@@ -182,6 +191,8 @@ public class FormDialog extends JDialog implements InterfaceViews{
         tx_email.setText("");
         dt_hora.setTime(null);
         cb_numPersonas.setSelectedIndex(0);
+        cb_tipoMenu.setSelectedIndex(0);
+        cb_TipoAlergia.setSelectedIndex(0);
 
     }
 

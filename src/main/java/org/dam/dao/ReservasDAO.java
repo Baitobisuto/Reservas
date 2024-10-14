@@ -59,6 +59,7 @@ public class ReservasDAO {
             ps.setString(7, reserva.getNotas_adicionales());
 
 
+
             int rowsAffected = ps.executeUpdate();
             return rowsAffected > 0;
 

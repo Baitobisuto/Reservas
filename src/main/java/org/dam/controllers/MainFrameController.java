@@ -5,10 +5,12 @@ import org.dam.services.WindowsServices;
 import org.dam.views.FormDialog;
 import org.dam.views.MainFrame;
 import org.dam.views.QueriesDialog;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
+
 import static org.dam.controllers.QueriesDialogController.CREATE_MODE;
 
 
@@ -30,7 +32,7 @@ public class MainFrameController implements ActionListener {
     }
 
     private void handleShowFormDialog() {
-       FormDialog formDialog = (FormDialog) windowsServices.getWindows("FormDialog");
+        FormDialog formDialog = (FormDialog) windowsServices.getWindows("FormDialog");
         formDialog.setMode(CREATE_MODE);
         formDialog.showWindow();
     }
@@ -39,7 +41,6 @@ public class MainFrameController implements ActionListener {
         QueriesDialog queriesDialog = (QueriesDialog) windowsServices.getWindows("QueriesDialog");
         queriesDialog.showWindow();
     }
-
 
     private void handleCloseMainFrame() {
         int response = JOptionPane.showConfirmDialog(null, "Seguro que quieres salir?");

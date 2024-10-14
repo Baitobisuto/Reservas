@@ -35,6 +35,7 @@ public class FormDialogController implements ActionListener, WindowListener, Ite
 
 
 
+
     // Constructor
     public FormDialogController(WindowsServices windowsServices, ReservasDAO reservasDAO, TipoMenuDAO tipoMenuDAO,TipoAlergiaDAO tipoAlergiaDAO) {
         this.windowsServices = windowsServices;
@@ -42,8 +43,7 @@ public class FormDialogController implements ActionListener, WindowListener, Ite
         this.reservasDAO = reservasDAO;
         this.tipoMenuDAO = tipoMenuDAO;
         this.tipoAlergiaDAO = tipoAlergiaDAO;
-        handlGetTipoReserva();
-        handlGetTipoAlergia();
+
     }
 
     private void handlGetTipoReserva() {
@@ -85,9 +85,7 @@ public class FormDialogController implements ActionListener, WindowListener, Ite
 
     private void handleEditReserva() {
         try {
-           // ReservasModel reserva = formDialog.getReservas();
             boolean okEditar = reservasDAO.editReserva(formDialog.getReservas());
-            //reservasDAO.editReserva(reserva);
             if (okEditar) {
                 JOptionPane.showMessageDialog(null, "Reserva actualizada correctamente");
             }

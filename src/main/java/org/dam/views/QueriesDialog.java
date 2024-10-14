@@ -2,15 +2,14 @@ package org.dam.views;
 
 import com.github.lgooddatepicker.components.DatePicker;
 import org.dam.models.ReservasModel;
+
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
-import java.awt.event.ActionListener;
-import java.awt.event.ItemListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.WindowListener;
+import java.awt.event.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
+
 import static java.lang.Integer.parseInt;
 import static org.dam.controllers.QueriesDialogController.*;
 
@@ -73,13 +72,13 @@ public class QueriesDialog extends JDialog implements InterfaceViews {
 
     public void setTotalPages(int elements) {
         int elementsPages = (int) cb_page.getSelectedItem();
-       totalPages = (int) Math.ceil((double) elements / elementsPages);
+        totalPages = (int) Math.ceil((double) elements / elementsPages);
     }
 
 
     public void loadResultsPage() {
         DefaultComboBoxModel comboBoxModel = new DefaultComboBoxModel();
-        for (int i = 10; i <= 50; i += 10) {
+        for (int i = 5; i <= 50; i += 5) {
             comboBoxModel.addElement(i);
         }
         cb_page.setModel(comboBoxModel);
@@ -161,6 +160,8 @@ public class QueriesDialog extends JDialog implements InterfaceViews {
         btn_next.addActionListener(listener);
         btn_back.addActionListener(listener);
         cb_page.addItemListener((ItemListener) listener);
+        tb_reservas.addMouseListener((MouseListener) listener);
+
 
 
     }
@@ -186,7 +187,6 @@ public class QueriesDialog extends JDialog implements InterfaceViews {
         cb_page.addItemListener((ItemListener) actionListener);
 
     }
-
 
     public void resetPagination() {
         cb_page.setSelectedIndex(0);
