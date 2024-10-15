@@ -29,7 +29,6 @@ public class FormDialogController implements ActionListener, WindowListener, Ite
     private TipoMenuModel tipoMenuModel;
     private TipoAlergiaDAO tipoAlergiaDAO;
     public static final String CREATE_RESERVA = "CreateReserva";
-    public static final String NUMBER_PERSONS = "NumberPersons";
     public static final String SHOW_TIPO_MENU = "ShowTipoMenu";
     public static final String EDIT_RESERVA = "EditReserva";
 
