@@ -84,6 +84,7 @@ public class FormDialogController implements ActionListener, WindowListener, Ite
 
     private void handleEditReserva() {
         try {
+
             boolean okEditar = reservasDAO.editReserva(formDialog.getReservas());
             if (okEditar) {
                 JOptionPane.showMessageDialog(null, "Reserva actualizada correctamente");
@@ -92,9 +93,6 @@ public class FormDialogController implements ActionListener, WindowListener, Ite
             System.out.println(e.getMessage());
         }
     }
-
-
-
 
     @Override
     public void actionPerformed(ActionEvent e) {

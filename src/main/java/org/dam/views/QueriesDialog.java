@@ -2,6 +2,7 @@ package org.dam.views;
 
 import com.github.lgooddatepicker.components.DatePicker;
 import org.dam.models.ReservasModel;
+import org.dam.models.TipoAlergiaModel;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -29,6 +30,10 @@ public class QueriesDialog extends JDialog implements InterfaceViews {
     private JButton btn_next;
     private JComboBox cb_page;
     private JLabel lb_page;
+    private JCheckBox ck_alergia;
+    private JComboBox cb_alergia;
+    private JLabel lb_alergia;
+    private JCheckBox checkBox1;
     private int page;
     private int totalPages;
     private int totalElements;
@@ -38,6 +43,7 @@ public class QueriesDialog extends JDialog implements InterfaceViews {
     public QueriesDialog(JFrame parent, boolean modal) {
         super(parent, modal);
         initWindow();
+
     }
 
     public int getLimit() {
@@ -45,11 +51,11 @@ public class QueriesDialog extends JDialog implements InterfaceViews {
     }
 
     public int getOffset() {
-        int itemPerPage = (int) cb_page.getSelectedItem();
+        int itemPerPage = getLimit();
         if (page < 1 || itemPerPage <= 0) {
             return 0;
         }
-        return (page - 1) * itemPerPage;
+        return (page - 1 ) * itemPerPage;
     }
 
     //Se ejecuta cada vez que pulsemos hacia delante/detrás
@@ -58,8 +64,8 @@ public class QueriesDialog extends JDialog implements InterfaceViews {
             page = value + page;
         } else if (value + page <= 0) {
             page = 1;
-            lb_page.setText("Página: " + page + " de: " + totalPages);
         }
+        lb_page.setText("Página: " + page + " de: " + totalPages);
     }
 
     public void setTotalElements(int totalElements) {
@@ -96,6 +102,24 @@ public class QueriesDialog extends JDialog implements InterfaceViews {
         TableModel model = tb_reservas.getModel();
         return Integer.valueOf(model.getValueAt(tb_reservas.getSelectedRow(), 0).toString());
     }
+
+    public void loadComboTipoAlergia(ArrayList<TipoAlergiaModel> reservasList) {
+        DefaultComboBoxModel<TipoAlergiaModel> model = new DefaultComboBoxModel();
+        //añadir un item al combo
+        TipoAlergiaModel tp = new TipoAlergiaModel();
+        tp.setDescripcion("Elige una opción");
+        tp.setId_alergia(0);
+        reservasList.add(0, tp);
+        for (TipoAlergiaModel tipoAlergia : reservasList) {
+            model.addElement(tipoAlergia);
+        }
+        cb_alergia.setModel(model); // crear el combo en la vista
+    }
+
+    public int getSelectedAlergiaID() {  // es el GET del COMBO loadComboTipoAlergia
+        return (int) cb_alergia.getSelectedItem();
+    }
+
 
     @Override
     public void initWindow() {
@@ -161,9 +185,8 @@ public class QueriesDialog extends JDialog implements InterfaceViews {
         btn_back.addActionListener(listener);
         cb_page.addItemListener((ItemListener) listener);
         tb_reservas.addMouseListener((MouseListener) listener);
-
-
-
+        tx_nombre.addKeyListener((KeyListener) listener);
+        cb_alergia.addItemListener((ItemListener) listener);
     }
 
     @Override
@@ -184,14 +207,17 @@ public class QueriesDialog extends JDialog implements InterfaceViews {
             cb_page.setSelectedIndex(0);
             page = 1;
         }
-        cb_page.addItemListener((ItemListener) actionListener);
-
     }
 
     public void resetPagination() {
         cb_page.setSelectedIndex(0);
         page = 1;
     }
+ /*   //17/10
+
+    public void setAlergia(TipoAlergiaModel alergia) {
+        cb_alergia.setSelectedItem(alergia);
+    }*/
 
 
 }

@@ -2,20 +2,24 @@ package org.dam.controllers;
 
 
 import org.dam.dao.ReservasDAO;
+import org.dam.dao.TipoAlergiaDAO;
 import org.dam.models.ReservasModel;
+import org.dam.models.TipoAlergiaModel;
 import org.dam.services.WindowsServices;
 import org.dam.views.FormDialog;
 import org.dam.views.QueriesDialog;
+
 import java.awt.event.*;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class QueriesDialogController implements ActionListener, WindowListener, ItemListener, MouseListener {
+public class QueriesDialogController implements ActionListener, WindowListener, ItemListener, MouseListener, KeyListener {
 
     private WindowsServices windowsServices;
     private QueriesDialog queriesDialog;
     private ReservasDAO reservasDAO;
     private FormDialog formDialog;
+    private TipoAlergiaDAO tipoAlergiaDAO;
 
 
     public static final String CLOSE_QUERIES_DIALOG = "closeQueriesDialog";
@@ -27,7 +31,7 @@ public class QueriesDialogController implements ActionListener, WindowListener, 
     public static final String CREATE_MODE = "CREATE_MODE";
     public static final String NEXT_PAGE = "NextPage";
     public static final String BACK_PAGE = "BackPage";
-
+    public static final String CK_ALERGIAS = "CK_ALERGIAS";
 
 
     public QueriesDialogController(WindowsServices windowsServices, ReservasDAO reservasDAO, FormDialog formDialog) {
@@ -35,10 +39,11 @@ public class QueriesDialogController implements ActionListener, WindowListener, 
         this.queriesDialog = (QueriesDialog) windowsServices.getWindows("QueriesDialog");
         this.reservasDAO = reservasDAO;
         this.formDialog = formDialog;
+        this.tipoAlergiaDAO = new TipoAlergiaDAO();
 
     }
 
-    private void handleLoadComboPage(){
+    private void handleLoadComboPage() {
         queriesDialog.loadResultsPage();
     }
 
@@ -49,9 +54,10 @@ public class QueriesDialogController implements ActionListener, WindowListener, 
 
     private void handleGetRerservas() {
         try {
+            queriesDialog.updatePage(0);
             ArrayList<ReservasModel> reservasList = reservasDAO.getReserva(queriesDialog.getLimit(), queriesDialog.getOffset());
             queriesDialog.showReservas(reservasList);
-            queriesDialog.updatePage(0);
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -85,7 +91,7 @@ public class QueriesDialogController implements ActionListener, WindowListener, 
     }
 
     private void openShowDialog(ReservasModel reserva) {
-        FormDialog formDialog = (FormDialog) windowsServices.getWindows("FormDialog");
+        formDialog = (FormDialog) windowsServices.getWindows("FormDialog");
         formDialog.setMode(EDIT_MODEL);
         formDialog.setReservas(reserva);
         formDialog.closeWindow();
@@ -106,15 +112,48 @@ public class QueriesDialogController implements ActionListener, WindowListener, 
         }
     }
 
-    private void handleReservaDobleClic() {
+   private void handleReservaDobleClic() {
         int reservaID = queriesDialog.getSelectedReservaID();
         System.out.println("La ID seleccionada es: " + reservaID);
         try {
             ArrayList<ReservasModel> reservasList = reservasDAO.getReservaById(reservaID);
             ReservasModel reserva = reservasList.get(0);
             openShowDialog(reserva);
+            //**********************************
         } catch (SQLException ex) {
             throw new RuntimeException(ex);
+        }
+    }
+        //17/10
+    /*private void handleReservaDobleClic() {
+        int reservaID = queriesDialog.getSelectedReservaID();
+        System.out.println("La ID seleccionada es: " + reservaID);
+        try {
+            ArrayList<ReservasModel> reservasList = reservasDAO.getReservaById(reservaID);
+            if (reservasList.isEmpty()) {
+                System.out.println("No se encontró la reserva con ID: " + reservaID);
+                return; // Salir si no hay reservas
+            }
+
+            ReservasModel reserva = reservasList.get(0);
+
+            // Obtener el tipo de alergia asociado a la reserva
+            TipoAlergiaModel alergia = tipoAlergiaDAO.getTipoAlergiaById(reserva.getId_alergia());
+
+            // Abrir el diálogo de edición y pasar la reserva y la alergia
+            openShowDialog(reserva, alergia);
+        } catch (SQLException ex) {
+            throw new RuntimeException("Error al obtener la reserva: " + ex.getMessage());
+        }
+    }
+*/
+
+    private void handleGetReservasByAlergia() {
+        try {
+            ArrayList<TipoAlergiaModel> reservasList = tipoAlergiaDAO.getTipoAlergia();
+            queriesDialog.loadComboTipoAlergia(reservasList);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -147,7 +186,10 @@ public class QueriesDialogController implements ActionListener, WindowListener, 
                 handleUpdatePage(-1);
                 handleGetRerservas();
                 break;
-
+            case CK_ALERGIAS:
+                queriesDialog.updatePage(0);
+                handleGetReservasByAlergia(); //17/10/24
+                break;
             default:
                 System.out.println("Acción desconocida: " + command);
                 break;
@@ -185,6 +227,7 @@ public class QueriesDialogController implements ActionListener, WindowListener, 
     public void windowActivated(WindowEvent e) {
         handleLoadComboPage();
         handleGetTotalElements();
+        handleGetReservasByAlergia(); // 17/10/24
         handleGetRerservas();
         handleUpdatePage(1); // el 1 es para que inicie en la página 1
     }
@@ -198,8 +241,8 @@ public class QueriesDialogController implements ActionListener, WindowListener, 
     public void itemStateChanged(ItemEvent e) { // se lanza cuando cambio de elemento en el combo de las paginas
         if (e.getStateChange() == ItemEvent.SELECTED) {
             handleGetTotalElements();
-            handleUpdatePage(1); // el 1 es para que inicie en 1
             handleGetRerservas();
+            handleUpdatePage(1); // el 1 es para que inicie en 1
         }
     }
 
@@ -231,4 +274,21 @@ public class QueriesDialogController implements ActionListener, WindowListener, 
 
     }
 
+    @Override
+    public void keyTyped(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+        if (e.getKeyCode() != -1) {
+            handleGetReservasByName();
+        }
+
+    }
 }

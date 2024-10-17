@@ -58,6 +58,25 @@ public class TipoAlergiaDAO {
         }
         return alergiasList;
     }
+/*// 17/10
+
+    public TipoAlergiaModel getTipoAlergiaById(int idAlergia) throws SQLException {
+        TipoAlergiaModel alergia = null;
+        String query = "SELECT * FROM alergias WHERE id_alergia = ?";
+        try (PreparedStatement ps = connection.prepareStatement(query)) {
+            ps.setInt(1, idAlergia);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                alergia = new TipoAlergiaModel();
+                alergia.setId_alergia(rs.getInt("id_alergia"));
+                alergia.setDescripcion(rs.getString("descripcion"));
+            }
+        }
+        return alergia;
+    }*/
+
+
+
 
 
 }

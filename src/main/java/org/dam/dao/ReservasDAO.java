@@ -58,8 +58,6 @@ public class ReservasDAO {
             ps.setString(6, reserva.getEmail_cliente());
             ps.setString(7, reserva.getNotas_adicionales());
 
-
-
             int rowsAffected = ps.executeUpdate();
             return rowsAffected > 0;
 
@@ -76,17 +74,19 @@ public class ReservasDAO {
         }
     }
 
-    public ArrayList<ReservasModel> getReserva(int limit,int offset) throws SQLException {
+    public ArrayList<ReservasModel> getReserva(int limit, int offset) throws SQLException {
         ArrayList<ReservasModel> reservas = new ArrayList<>();
         if (!initDBConnection()) {
             System.out.println("Error al conectar con la base de datos");
         }
         try {
-            String query = "SELECT r.*, m.tipo_menu, a.descripcion AS alergia\n" +
-                    "FROM reservas r\n" +
-                    "LEFT JOIN menu_nuevo m ON r.id_menu = m.id_menu\n" +
-                    "LEFT JOIN alergias a ON r.id_reserva = a.id_reserva\n" +
-                    "LIMIT ? OFFSET ?";
+            String query = """
+                    SELECT r.*, m.tipo_menu, a.descripcion AS alergia 
+                    FROM reservas r
+                    LEFT JOIN menu_nuevo m ON r.id_menu = m.id_menu
+                    LEFT JOIN alergias a ON r.id_reserva = a.id_reserva
+                    ORDER BY r.id_reserva     
+                    LIMIT ? OFFSET ?""";
             PreparedStatement ps = connection.prepareStatement(query);
             ps.setInt(1, limit);
             ps.setInt(2, offset);
@@ -106,6 +106,10 @@ public class ReservasDAO {
                     //reserva.setEmail_cliente(rs.getString("email_cliente"));
                     //reserva.setId_menu(rs.getInt("id_menu"));
                     reservas.add(reserva);
+                }
+                if(reservas.isEmpty()){
+                    JOptionPane.showMessageDialog(null, "No hay reservas disponibles", "No hay reservas", JOptionPane.WARNING_MESSAGE);
+
                 }
             }
         } catch (SQLException e) {
@@ -144,7 +148,13 @@ public class ReservasDAO {
                     reserva.setNotas_adicionales(rs.getString("notas_adicionales"));
                     reserva.setTipo_menu(rs.getString("tipo_menu"));
                     reserva.setDescripcion_alergia(rs.getString("alergia"));
+                    reserva.setId_menu(rs.getInt("id_menu"));
+                    reserva.setId_alergia(rs.getInt("id_alergia"));
                     reservas.add(reserva);
+                }
+                if(reservas.isEmpty()){
+                    JOptionPane.showMessageDialog(null, "No hay reservas disponibles", "No hay reservas", JOptionPane.WARNING_MESSAGE);
+
                 }
             }
         } catch (SQLException e) {
@@ -185,6 +195,10 @@ public class ReservasDAO {
                 r.setDescripcion_alergia(resultSet.getString("alergia"));
                 reservasList.add(r);
             }
+            if(reservasList.isEmpty()){
+                JOptionPane.showMessageDialog(null, "No hay reservas para el nombre seleccionado", "No hay reservas", JOptionPane.WARNING_MESSAGE);
+
+            }
         } catch (SQLException e) {
             throw new SQLException("Error al consultar la reserva" + e.getMessage());
         } finally {
@@ -195,6 +209,9 @@ public class ReservasDAO {
 
 
     public ArrayList<ReservasModel> getRersevasByDate(LocalDate fecha1, LocalDate fecha2) throws SQLException {
+        if (fecha1.isAfter(fecha2)) {
+            JOptionPane.showMessageDialog(null, "La fecha de inicio no puede ser mayor que la de fin ");
+        }
         ArrayList<ReservasModel> reservaList = new ArrayList<>();
         if (!initDBConnection()) {
             throw new SQLException("ERROR AL CONECTAR CON LA BASE DE DATOS");
@@ -225,6 +242,10 @@ public class ReservasDAO {
 
                 reservaList.add(res);
             }
+            if(reservaList.isEmpty()){
+                JOptionPane.showMessageDialog(null, "No hay reservas para la fecha seleccionada", "No hay reservas", JOptionPane.WARNING_MESSAGE);
+
+            }
         } catch (SQLException e) {
             throw new SQLException("Error del método getReservasByDate" + e.getMessage());
         } finally {
@@ -234,12 +255,13 @@ public class ReservasDAO {
     }
 
     public boolean editReserva(ReservasModel reserva) throws SQLException {
+
         if (!initDBConnection()) {
             throw new SQLException("Error al conectar con la base de datos");
         }
         try {
-            String SQL = "UPDATE reservas \n" +
-                    "SET nombre_cliente = ?, fecha_reserva = ?, hora_reserva = ?, num_personas = ?, telefono_cliente = ?, notas_adicionales = ?, id_menu = ?\n" +
+            String SQL = "UPDATE reservas " +
+                    "SET nombre_cliente = ?, fecha_reserva = ?, hora_reserva = ?, num_personas = ?, telefono_cliente = ?, notas_adicionales = ?, id_menu = ? " +
                     "WHERE id_reserva = ?";
             PreparedStatement ps = connection.prepareStatement(SQL);
             ps.setString(1, reserva.getNombre_cliente());
@@ -258,6 +280,7 @@ public class ReservasDAO {
             return rowsUpdate > 0;
 
         } catch (SQLException e) {
+            e.printStackTrace();
             throw new SQLException("Error al actualizar la reserva desde el método editReseva");
 
         } finally {
@@ -267,15 +290,25 @@ public class ReservasDAO {
 
     public boolean deleteReserva(int id) throws SQLException {
         if (!initDBConnection()) {
-
             throw new SQLException("Error al conectar con la base de datos");
         }
         try {
-            String SQL = "DELETE FROM reservas WHERE id_reserva =?;";
-            PreparedStatement ps = connection.prepareStatement(SQL);
-            ps.setInt(1, id);
-            int rowsAffected = ps.executeUpdate();
-            return rowsAffected > 0;
+            int respuesta = JOptionPane.showConfirmDialog(null, "¿Estás seguro de eliminar la reserva?", "Confirmación", JOptionPane.YES_NO_OPTION);
+            if (respuesta == JOptionPane.YES_OPTION) {
+                String SQL = "DELETE FROM reservas WHERE id_reserva =?; ";
+                PreparedStatement ps = connection.prepareStatement(SQL);
+                ps.setInt(1, id);
+                int rowsAffected = ps.executeUpdate();
+                if (rowsAffected > 0) {
+                    JOptionPane.showMessageDialog(null, "Reserva eliminada correctamente");
+                    return true;
+                } else {
+                    JOptionPane.showMessageDialog(null, "No se pudo eliminar la reserva");
+                    return false;
+                }
+            } else {
+                return false;
+            }
         } catch (SQLException e) {
             e.printStackTrace();
             throw new SQLException("Error al eliminar la reserva desde el método DeleteReserva");
@@ -300,7 +333,41 @@ public class ReservasDAO {
             throw new SQLException("Error al obtener la cantidad de elementos desde el método getElementsNumber");
         } finally {
             closeDBConnection();
-        }return 0;
+        }
+        return 0;
+    }
+
+    public ArrayList<ReservasModel> getReservasByIdAlergia(int id_alergia) throws SQLException {
+        ArrayList<ReservasModel> reservasList = new ArrayList<>();
+        if (!initDBConnection()) {
+            throw new SQLException("ERROR AL CONECTAR CON LA BASE DE DATOS");
+        }
+        try {
+            String query = "SELECT r.*, m.tipo_menu, a.descripcion AS alergia " +
+                    "FROM reservas r " +
+                    "LEFT JOIN menu_nuevo m ON r.id_menu = m.id_menu " +
+                    "LEFT JOIN alergias a ON r.id_reserva = a.id_reserva " +
+                    "WHERE a.id_alergia=? ";
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setInt(1, id_alergia);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+                ReservasModel r = new ReservasModel();
+                r.setId(resultSet.getInt("id_reserva"));
+                r.setNombre_cliente(resultSet.getString("nombre_cliente"));
+                r.setDate(resultSet.getDate("fecha_reserva").toLocalDate());
+                r.setHora(resultSet.getTime("hora_reserva").toLocalTime());
+                r.setTipo_menu(resultSet.getString("tipo_menu"));
+                r.setDescripcion_alergia(resultSet.getString("alergia"));
+                reservasList.add(r);
+            }
+        } catch (SQLException e) {
+            throw new SQLException("Error al consultar la reserva" + e.getMessage());
+        } finally {
+            closeDBConnection();
+        }
+        return reservasList;
     }
 
 }
